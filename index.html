@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>006miniproject</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Family and icon -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Main CSS by w3.css -->
+  <link rel="stylesheet" href="w3.css">
+  <style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: "Poppins", sans-serif
+    }
+
+    body {
+      font-size: 16px;
+    }
+
+    .w3-half img {
+      margin-bottom: -6px;
+      margin-top: 16px;
+      opacity: 0.8;
+      cursor: pointer
+    }
+
+    .w3-half img:hover {
+      opacity: 1
+    }
+  </style>
+</head>
+
+<body>
+  <script src="script.js"></script>
+  <!-- Sidebar/menu -->
+  <nav class="w3-sidebar w3-rain w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;"
+    id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft w3-text-gray"
+      style="width:100%;font-size:22px">Close Menu</a>
+    <br><br>
+    <img src="images/tuyu.jpg" alt="tuyu" class=" w3-circle w3-margin-right" style="width: 250px">
+    <div class="w3-container">
+      <h3 class="w3-padding-64 w3-text-conb"><a href="https://www.youtube.com/channel/UCB2tP2QfRG7hTra0KTOtTBg"
+          target="_blank"><b>ツユ<br>@TUYU_official</b></a></h3>
+    </div>
+    <div class="w3-bar-block">
+      <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white w3-text-gray">Home</a>
+      <a href="#section1" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white w3-text-gray">About</a>
+      <a href="#section2" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white w3-text-gray">Member</a>
+      <a href="#section3" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white w3-text-gray">Song-List</a>
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+
+  <header class="w3-container w3-top w3-hide-large w3-rain w3-xlarge w3-padding">
+    <a href="javascript:void(0)" class="w3-button w3-rain w3-text-gray w3-margin-right" onclick="w3_open()">&#9776;</a>
+    <img src="images/tuyu.jpg" alt="tuyu" class=" w3-circle w3-margin-right" style="width:80px">
+    <span class="w3-text-conb">ツユ</span>
+
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu"
+    id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+    <!-- Header -->
+    <div class="w3-container fade-in-element" style="margin-top:80px">
+      <h1 class="w3-jumbo"><b></b></h1>
+      <h1 class="w3-xxxlarge w3-text-conb "><b>☂ ツユ</b></h1>
+      <hr style="width:50px;border:5px solid #C4D3DF" class="w3-round">
+      <div class="w3-col m4 w3-circle">
+        <div class="w3-light-grey">
+          <img src="images/ogp.jpg" alt="tuyu" style="width:100%" class="w3-center">
+          <div class="w3-container w3-rain">
+            <h3>Tuyu (ツユ)</h3>
+            <p class="w3-opacity">@TUYU_official</p>
+            <a href="https://www.youtube.com/channel/UCB2tP2QfRG7hTra0KTOtTBg" target="_blank"><i
+                class="fa fa-youtube-play w3-text-conb" style="font-size:30px"></i></a>
+            <a href="https://twitter.com/TUYU_official" target="_blank"><i class="fa fa-twitter w3-text-conb"
+                style="font-size:30px"></i></a>
+            <a href="https://open.spotify.com/artist/0PHf0oiic0xAnCrRuLTtHl" target="_blank"><i
+                class="fa fa-spotify w3-text-conb" style="font-size:36px"></i></a>
+          </div>
+        </div>
+      </div>
+      <br>
+      <h3 class="text-beside"> The group was formed on June 12, 2019. Its name comes from the Japanese word for “rainy
+        season” duringwhich it was formed.</h3>
+    </div>
+
+    <!-- Modal for full size images on click-->
+    <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+      <span class="w3-button w3-black w3-xxlarge w3-display-topright">&times;</span>
+      <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+        <img id="img01" class="w3-image">
+        <p id="caption"></p>
+      </div>
+    </div>
+
+
+
+    <!-- Services -->
+    <div class="w3-container fade-in-element" id="section1" style="margin-top:75px">
+      <h1 class="w3-xxxlarge w3-text-conb"><b>☂ About</b></h1>
+      <hr style="width:50px;border:5px solid #C4D3DF" class="w3-round">
+      <p>
+        Tuyu is Currently has over 1,260,000 YouTube Subscribers. In addition to its showpiece titled “Compared Child”
+        that has
+        had over 43million views, every music video that they have uploaded have been played over a million times. They
+        are
+        constantly ranked in both Japanese and foreign music distribution sites and appear in their popular playlists. A
+        group of artists to keep an eye on with many fans around the world.</p>
+    </div>
+    <!-- Designers -->
+    <div class="w3-container fade-in-element" id="section2" style="margin-top:75px">
+      <h1 class="w3-xxxlarge w3-text-conb"><b>☂ Member</b></h1>
+      <hr style="width:50px;border:5px solid #C4D3DF" class="w3-round">
+      <p>A music unit consisting of Pusu on guitar and in charge of composing the songs, Rei as vocals, and miro on
+        piano.
+      </p>
+      <p><b> Member of Tuyu </b>:</p>
+    </div>
+
+    <!-- The Team -->
+    <div class="w3-row-padding w3-center fade-in-element">
+      <div class="w3-col m4 w3-margin-bottom w3-circle">
+        <div class="w3-light-grey">
+          <img src="images/pusu.png" alt="pusu" style="width:100%">
+          <div class="w3-container w3-rain">
+            <h3>Pusu (Pusu(ぷす))</h3>
+            <p class="w3-opacity">Composert, Guitarist</p>
+            <a href="https://www.youtube.com/channel/UC1x8Dc0Pwq3rdShBm0GWjig" target="_blank"><i
+                class="fa fa-youtube-play w3-text-conb" style="font-size:30px"></i></a>
+            <a href="https://twitter.com/Pusu_kun" target="_blank"><i class="fa fa-twitter w3-text-conb"
+                style="font-size:30px"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col m4 w3-margin-bottom w3-center">
+        <div class="w3-light-grey">
+          <img src="images/rei.png" alt="rei" style="width:100%">
+          <div class="w3-container w3-rain">
+            <h3>Rei (Rei(礼衣))</h3>
+            <p class="w3-opacity">Vocals</p>
+            <a href="https://www.instagram.com/rei_tuyu" target="_blank"><i class="fa fa-instagram w3-text-conb"
+                style="font-size:30px"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col m4 w3-margin-bottom">
+        <div class="w3-light-grey">
+          <img src="images/miro.png" alt="miro" style="width:100%">
+          <div class="w3-container w3-rain">
+            <h3>Miro (Miro(ミロ))</h3>
+            <p class="w3-opacity">Piano</p>
+            <a href="https://www.youtube.com/channel/UCNXQ0bi7z7VjMt1AnR6H_Sw" target="_blank"><i
+                class="fa fa-youtube-play w3-text-conb" style="font-size:30px"></i></a>
+            <a href="https://twitter.com/mironuko" target="_blank"><i class="fa fa-twitter w3-text-conb"
+                style="font-size:30px"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w3-container fade-in-element" id="section3" style="margin-top:75px">
+      <h1 class="w3-xxxlarge w3-text-conb"><b>☂ Song-List</b></h1>
+      <hr style="width:50px;border:5px solid #C4D3DF" class="w3-round">
+    </div>
+    <ul class="song-list">
+      <li><iframe width="1000" height="600" src="https://www.youtube.com/embed/D0ehC_8sQuU" frameborder="0"
+          allowfullscreen></iframe>
+        <h2 class="fade-in-element"><b>It's Raining After All | やっぱり雨は降るんだね</b> <a
+            href="https://www.youtube.com/watch?v=D0ehC_8sQuU" target="_blank"><i
+              class="fa fa-youtube-play w3-text-conb" style="font-size:36px"></i></a>
+          <a href="https://open.spotify.com/track/1qNqYFfxuTPHwYmRMCdzdt" target="_blank"><i
+              class="fa fa-spotify w3-text-conb" style="font-size:36px"></i></a>
+        </h2>
+        <p class="fade-in-element w3-text-gray">Vocal : <a href="https://www.instagram.com/rei_tuyu" target="_blank"><i
+              class="fa fa-instagram w3-text-conb">Rei(礼衣)</i></a> <br>
+          Piano：<a href="https://twitter.com/mironuko" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Miro(ミロ)</i></a> <br>
+          illustration : <a href="https://twitter.com/omrice4869" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">おむたつ</i></a> <br>
+          Music&Lyrics/Editing/Guitar/Mix&Mastering : <a href="https://twitter.com/Pusu_kun" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Pusu(ぷす)</i></a> <br>
+          Movie ：<a href="https://twitter.com/AzyuN_AN" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">AzyuN</i></a>
+        </p>
+      </li>
+      <li><iframe width="1000" height="600" src="https://www.youtube.com/embed/LoK17z6xDwI" frameborder="0"
+          allowfullscreen></iframe>
+        <h2 class="fade-in-element"><b>Under the Summer Breeze | 風薫る空の下</b> <a
+            href="https://www.youtube.com/watch?v=LoK17z6xDwI" target="_blank"><i
+              class="fa fa-youtube-play w3-text-conb" style="font-size:36px"></i></a>
+          <a href="https://open.spotify.com/track/7ALznevWPEg5ZuNZJYUIfp" target="_blank"><i
+              class="fa fa-spotify w3-text-conb" style="font-size:36px"></i></a>
+        </h2>
+        <p class="fade-in-element w3-text-gray">Vocal : <a href="https://www.instagram.com/rei_tuyu" target="_blank"><i
+              class="fa fa-instagram w3-text-conb">Rei(礼衣)</i></a> <br>
+          Piano：<a href="https://twitter.com/mironuko" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Miro(ミロ)</i></a> <br>
+          illustration : <a href="https://twitter.com/omrice4869" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">おむたつ</i></a> <br>
+          Music&Lyrics/Editing/Guitar/Mix&Mastering : <a href="https://twitter.com/Pusu_kun" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Pusu(ぷす)</i></a> <br>
+          Movie ：<a href="https://twitter.com/AzyuN_AN" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">AzyuN</i></a>
+        </p>
+      </li>
+      <li><iframe width="1000" height="600" src="https://www.youtube.com/embed/VP7FM1yyMpU" frameborder="0"
+          allowfullscreen></iframe>
+        <h2 class="fade-in-element"><b>When the Morning Glory Falls | アサガオの散る頃に</b> <a
+            href="https://www.youtube.com/watch?v=VP7FM1yyMpU" target="_blank"><i
+              class="fa fa-youtube-play w3-text-conb" style="font-size:36px"></i></a>
+          <a href="https://open.spotify.com/track/4tT95PXtSH6lPzaSNWiJhu" target="_blank"><i
+              class="fa fa-spotify w3-text-conb" style="font-size:36px"></i></a>
+        </h2>
+        <p class="fade-in-element w3-text-gray">Vocal : <a href="https://www.instagram.com/rei_tuyu" target="_blank"><i
+              class="fa fa-instagram w3-text-conb">Rei(礼衣)</i></a> <br>
+          Piano：<a href="https://twitter.com/mironuko" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Miro(ミロ)</i></a> <br>
+          illustration : <a href="https://twitter.com/omrice4869" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">おむたつ</i></a> <br>
+          Music&Lyrics/Editing/Guitar/Mix&Mastering : <a href="https://twitter.com/Pusu_kun" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Pusu(ぷす)</i></a> <br>
+          Movie ：<a href="https://twitter.com/AzyuN_AN" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">AzyuN</i></a>
+        </p>
+      </li>
+      <li><iframe width="1000" height="600" src="https://www.youtube.com/embed/olWvy0PiLfA" frameborder="0"
+          allowfullscreen></iframe>
+        <h2 class="fade-in-element"><b>Compared Child | くらべられっ子</b> <a
+            href="https://www.youtube.com/watch?v=olWvy0PiLfA" target="_blank"><i
+              class="fa fa-youtube-play w3-text-conb" style="font-size:36px"></i></a>
+          <a href="https://open.spotify.com/track/1FOhzA4qQiyVnzVYt1KcgN" target="_blank"><i
+              class="fa fa-spotify w3-text-conb" style="font-size:36px"></i></a>
+        </h2>
+        <p class="fade-in-element w3-text-gray">Vocal : <a href="https://www.instagram.com/rei_tuyu" target="_blank"><i
+              class="fa fa-instagram w3-text-conb">Rei(礼衣)</i></a> <br>
+          Piano：<a href="https://twitter.com/mironuko" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Miro(ミロ)</i></a> <br>
+          illustration : <a href="https://twitter.com/omrice4869" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">おむたつ</i></a> <br>
+          Music&Lyrics/Editing/Guitar/Mix&Mastering : <a href="https://twitter.com/Pusu_kun" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Pusu(ぷす)</i></a> <br>
+          Movie ：<a href="https://twitter.com/AzyuN_AN" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">AzyuN</i></a>
+        </p>
+      </li>
+      <li><iframe width="1000" height="600" src="https://www.youtube.com/embed/4QXCPuwBz2E" frameborder="0"
+          allowfullscreen></iframe>
+        <h2 class="fade-in-element"><b>I'm getting on the bus to the other world, see ya! | あの世行きのバスに乗ってさらば。</b> <a
+            href="https://www.youtube.com/watch?v=4QXCPuwBz2E" target="_blank"><i
+              class="fa fa-youtube-play w3-text-conb" style="font-size:36px"></i></a>
+          <a href="https://open.spotify.com/track/1FOhzA4qQiyVnzVYt1KcgN" target="_blank"><i
+              class="fa fa-spotify w3-text-conb" style="font-size:36px"></i></a>
+        </h2>
+        <p class="fade-in-element w3-text-gray">Vocal : <a href="https://www.instagram.com/rei_tuyu" target="_blank"><i
+              class="fa fa-instagram w3-text-conb">Rei(礼衣)</i></a> <br>
+          Piano：<a href="https://twitter.com/mironuko" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Miro(ミロ)</i></a> <br>
+          illustration : <a href="https://twitter.com/omrice4869" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">おむたつ</i></a> <br>
+          Music&Lyrics/Editing/Guitar/Mix&Mastering : <a href="https://twitter.com/Pusu_kun" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Pusu(ぷす)</i></a> <br>
+          Movie ：<a href="https://twitter.com/AzyuN_AN" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">AzyuN</i></a>
+        </p>
+      </li>
+      <li><iframe width="1000" height="600" src="https://www.youtube.com/embed/1cGQotpn8r4" frameborder="0"
+          allowfullscreen></iframe>
+        <h2 class="fade-in-element"><b>Goodbye to Rock you | ロックな君とはお別れだ</b> <a
+            href="https://www.youtube.com/watch?v=1cGQotpn8r4" target="_blank"><i
+              class="fa fa-youtube-play w3-text-conb" style="font-size:36px"></i></a>
+          <a href="https://open.spotify.com/track/5U1WdUzVEMC8afmZELiPnk" target="_blank"><i
+              class="fa fa-spotify w3-text-conb" style="font-size:36px"></i></a>
+        </h2>
+        <p class="fade-in-element w3-text-gray">Vocal : <a href="https://www.instagram.com/rei_tuyu" target="_blank"><i
+              class="fa fa-instagram w3-text-conb">Rei(礼衣)</i></a> <br>
+          Piano：<a href="https://twitter.com/mironuko" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Miro(ミロ)</i></a> <br>
+          illustration : <a href="https://twitter.com/omrice4869" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">おむたつ</i></a> <br>
+          Music&Lyrics/Editing/Guitar/Mix&Mastering : <a href="https://twitter.com/Pusu_kun" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Pusu(ぷす)</i></a> <br>
+          Movie ：<a href="https://twitter.com/AzyuN_AN" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">AzyuN</i></a>
+        </p>
+      </li>
+      <li><iframe width="1000" height="600" src="https://www.youtube.com/embed/E2b_bvTbDz8" frameborder="0"
+          allowfullscreen></iframe>
+        <h2 class="fade-in-element"><b>Perhaps I'll be able to become the Sun. | 太陽になれるかな</b> <a
+            href="https://www.youtube.com/watch?v=E2b_bvTbDz8" target="_blank"><i
+              class="fa fa-youtube-play w3-text-conb" style="font-size:36px"></i></a>
+          <a href="https://open.spotify.com/track/2ZVyBbwFzdEHZZP1zCtyqa" target="_blank"><i
+              class="fa fa-spotify w3-text-conb" style="font-size:36px"></i></a>
+        </h2>
+        <p class="fade-in-element w3-text-gray">Vocal : <a href="https://www.instagram.com/rei_tuyu" target="_blank"><i
+              class="fa fa-instagram w3-text-conb">Rei(礼衣)</i></a> <br>
+          Piano：<a href="https://twitter.com/mironuko" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Miro(ミロ)</i></a> <br>
+          illustration : <a href="https://twitter.com/omrice4869" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">おむたつ</i></a> <br>
+          Music&Lyrics/Editing/Guitar/Mix&Mastering : <a href="https://twitter.com/Pusu_kun" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Pusu(ぷす)</i></a> <br>
+          Movie ：<a href="https://twitter.com/AzyuN_AN" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">AzyuN</i></a>
+        </p>
+      </li>
+      <li><iframe width="1000" height="600" src="https://www.youtube.com/embed/5xfNTyy-Xhk" frameborder="0"
+          allowfullscreen></iframe>
+        <h2 class="fade-in-element"><b>Even tears withered | ナミカレ</b> <a
+            href="https://www.youtube.com/watch?v=5xfNTyy-Xhk" target="_blank"><i
+              class="fa fa-youtube-play w3-text-conb" style="font-size:36px"></i></a>
+          <a href="https://open.spotify.com/track/1Jj5r9yLJ4tQEtLrCNOhd8" target="_blank"><i
+              class="fa fa-spotify w3-text-conb" style="font-size:36px"></i></a>
+        </h2>
+        <p class="fade-in-element w3-text-gray">Vocal : <a href="https://www.instagram.com/rei_tuyu" target="_blank"><i
+              class="fa fa-instagram w3-text-conb">Rei(礼衣)</i></a> <br>
+          Piano：<a href="https://twitter.com/mironuko" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Miro(ミロ)</i></a> <br>
+          illustration : <a href="https://twitter.com/omrice4869" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">おむたつ</i></a> <br>
+          Music&Lyrics/Editing/Guitar/Mix&Mastering : <a href="https://twitter.com/Pusu_kun" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Pusu(ぷす)</i></a> <br>
+          Movie ：<a href="https://twitter.com/AzyuN_AN" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">AzyuN</i></a>
+        </p>
+        </p>
+      </li>
+      <li><iframe width="1000" height="600" src="https://www.youtube.com/embed/6oD3YkYOJxY" frameborder="0"
+          allowfullscreen></iframe>
+        <h2 class="fade-in-element"><b>To bask in the rain | 雨を浴びる</b> <a
+            href="https://www.youtube.com/watch?v=6oD3YkYOJxY" target="_blank"><i
+              class="fa fa-youtube-play w3-text-conb" style="font-size:36px"></i></a>
+          <a href="https://open.spotify.com/track/6kRHcB1quuGkLJQj0Q10T7" target="_blank"><i
+              class="fa fa-spotify w3-text-conb" style="font-size:36px"></i></a>
+        </h2>
+        <p class="fade-in-element w3-text-gray">Vocal : <a href="https://www.instagram.com/rei_tuyu" target="_blank"><i
+              class="fa fa-instagram w3-text-conb">Rei(礼衣)</i></a> <br>
+          Piano：<a href="https://twitter.com/mironuko" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Miro(ミロ)</i></a> <br>
+          illustration : <a href="https://twitter.com/omrice4869" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">おむたつ</i></a> <br>
+          Music&Lyrics/Editing/Guitar/Mix&Mastering : <a href="https://twitter.com/Pusu_kun" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Pusu(ぷす)</i></a> <br>
+          Movie ：<a href="https://twitter.com/Q_quv_s6" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Qvy</i></a>
+        </p>
+      </li>
+      <li><iframe width="1000" height="600" src="https://www.youtube.com/embed/M7FH1dL51oU" frameborder="0"
+          allowfullscreen></iframe>
+        <h2 class="fade-in-element"><b>Being low as dirt, taking what's important from me | 泥の分際で私だけの大切を奪おうだなんて</b> <a
+            href="https://www.youtube.com/watch?v=M7FH1dL51oU" target="_blank"><i
+              class="fa fa-youtube-play w3-text-conb" style="font-size:36px"></i></a>
+          <a href="https://open.spotify.com/track/63Pc4bQUygWaIKOd4Fc9CG" target="_blank"><i
+              class="fa fa-spotify w3-text-conb" style="font-size:36px"></i></a>
+        </h2>
+        <p class="fade-in-element w3-text-gray">Vocal : <a href="https://www.instagram.com/rei_tuyu" target="_blank"><i
+              class="fa fa-instagram w3-text-conb">Rei(礼衣)</i></a> <br>
+          Piano：<a href="https://twitter.com/mironuko" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Miro(ミロ)</i></a> <br>
+          illustration : <a href="https://twitter.com/omrice4869" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">おむたつ</i></a> <br>
+          Music&Lyrics/Editing/Guitar/Mix&Mastering : <a href="https://twitter.com/Pusu_kun" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Pusu(ぷす)</i></a> <br>
+          Movie ：<a href="https://twitter.com/AzyuN_AN" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">AzyuN</i></a>
+        </p>
+      </li>
+      <li><iframe width="1000" height="600" src="https://www.youtube.com/embed/lGFEqEFJ410" frameborder="0"
+          allowfullscreen></iframe>
+        <h2 class="fade-in-element"><b>Trapped in the Past | 過去に囚われている</b> <a
+            href="https://www.youtube.com/watch?v=lGFEqEFJ410" target="_blank"><i
+              class="fa fa-youtube-play w3-text-conb" style="font-size:36px"></i></a>
+          <a href="https://open.spotify.com/track/6IxOBXyyFcEr5nh1SGYtyq" target="_blank"><i
+              class="fa fa-spotify w3-text-conb" style="font-size:36px"></i></a>
+        </h2>
+        <p class="fade-in-element w3-text-gray">Vocal : <a href="https://www.instagram.com/rei_tuyu" target="_blank"><i
+              class="fa fa-instagram w3-text-conb">
+              Rei(礼衣)</i></a> <br>
+          Piano：<a href="https://twitter.com/mironuko" target="_blank"><i class="fa fa-twitter w3-text-conb">
+              Miro(ミロ)</i></a> <br>
+          Director: <a href="https://twitter.com/POPREQ" target="_blank"> <i class="fa fa-twitter w3-text-conb">
+              Poprika (Hurray!)</i></a> <br>
+          Character/Art Design: <a href="https://twitter.com/haruno_168" target="_blank"> <i
+              class="fa fa-twitter w3-text-conb">
+              Magotsuki (Hurray!)</i></a> <br>
+          3D Animation Assistant: <a href="https://twitter.com/AzyuN_AN" target="_blank"> <i
+              class="fa fa-twitter w3-text-conb">
+              Ohajiki (Hurray!)</i></a> <br>
+          Dance Animation Actor: Suzuki Ayumi
+        </p>
+      </li>
+      <li><iframe width="1000" height="600" src="https://www.youtube.com/embed/6rg4cYlAKOc" frameborder="0"
+          allowfullscreen></iframe>
+        <h2 class="fade-in-element"><b>Loser Girl | ルーザーガール</b> <a href="https://www.youtube.com/watch?v=6rg4cYlAKOc"
+            target="_blank"><i class="fa fa-youtube-play w3-text-conb" style="font-size:36px"></i></a>
+          <a href="https://open.spotify.com/track/5BWwoGWl19liOPO9DDAtcm" target="_blank"><i
+              class="fa fa-spotify w3-text-conb" style="font-size:36px"></i></a>
+        </h2>
+        <p class="fade-in-element w3-text-gray">Vocal : <a href="https://www.instagram.com/rei_tuyu" target="_blank"><i
+              class="fa fa-instagram w3-text-conb">Rei(礼衣)</i></a> <br>
+          Piano：<a href="https://twitter.com/mironuko" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Miro(ミロ)</i></a> <br>
+          illustration : <a href="https://twitter.com/omrice4869" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">おむたつ</i></a> <br>
+          Music&Lyrics/Editing/Guitar/Mix&Mastering : <a href="https://twitter.com/Pusu_kun" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Pusu(ぷす)</i></a> <br>
+          Movie ：<a href="https://twitter.com/AzyuN_AN" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">AzyuN</i></a>
+        </p>
+      </li>
+      <li><iframe width="1000" height="600" src="https://www.youtube.com/embed/Bq0ZINOzVng" frameborder="0"
+          allowfullscreen></iframe>
+        <h2 class="fade-in-element"><b> Hide and Seek Alone | かくれんぼっち</b> <a
+            href="https://www.youtube.com/watch?v=Bq0ZINOzVng" target="_blank"><i
+              class="fa fa-youtube-play w3-text-conb" style="font-size:36px"></i></a>
+          <a href="https://open.spotify.com/track/3zIPiR00vKggKeMFVF9UfD" target="_blank"><i
+              class="fa fa-spotify w3-text-conb" style="font-size:36px"></i></a>
+        </h2>
+        <p class="fade-in-element w3-text-gray">Vocal : <a href="https://www.instagram.com/rei_tuyu" target="_blank"><i
+              class="fa fa-instagram w3-text-conb">Rei(礼衣)</i></a> <br>
+          Piano：<a href="https://twitter.com/mironuko" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Miro(ミロ)</i></a> <br>
+          illustration : <a href="https://twitter.com/omrice4869" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">おむたつ</i></a> <br>
+          Music&Lyrics/Editing/Guitar/Mix&Mastering : <a href="https://twitter.com/Pusu_kun" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Pusu(ぷす)</i></a> <br>
+          Movie ：<a href="https://twitter.com/AzyuN_AN" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">AzyuN</i></a>
+        </p>
+      </li>
+      <li><iframe width="1000" height="600" src="https://www.youtube.com/embed/Wx08V5jPEwg" frameborder="0"
+          allowfullscreen></iframe>
+        <h2 class="fade-in-element"><b>Dämonisch | デモーニッシュ</b> <a href="https://www.youtube.com/watch?v=Wx08V5jPEwg"
+            target="_blank"><i class="fa fa-youtube-play w3-text-conb" style="font-size:36px"></i></a>
+          <a href="https://open.spotify.com/track/6YHa97HdZG0cc1ClB2mgZA" target="_blank"><i
+              class="fa fa-spotify w3-text-conb" style="font-size:36px"></i></a>
+        </h2>
+        <p class="fade-in-element w3-text-gray">Vocal : <a href="https://www.instagram.com/rei_tuyu" target="_blank"><i
+              class="fa fa-instagram w3-text-conb">Rei(礼衣)</i></a> <br>
+          Piano：<a href="https://twitter.com/mironuko" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Miro(ミロ)</i></a> <br>
+          illustration : <a href="https://twitter.com/omrice4869" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">おむたつ</i></a> <br>
+          Music&Lyrics/Editing/Guitar/Mix&Mastering : <a href="https://twitter.com/Pusu_kun" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Pusu(ぷす)</i></a> <br>
+          Movie ：<a href="https://twitter.com/AzyuN_AN" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">AzyuN</i></a>
+        </p>
+      </li>
+      <li><iframe width="1000" height="600" src="https://www.youtube.com/embed/G5HKY-vM_6g" frameborder="0"
+          allowfullscreen></iframe>
+        <h2 class="fade-in-element"><b>Faithful dog "Hachi" | 忠犬ハチ</b> <a
+            href="https://www.youtube.com/watch?v=G5HKY-vM_6g" target="_blank"><i
+              class="fa fa-youtube-play w3-text-conb" style="font-size:36px"></i></a>
+          <a href="https://open.spotify.com/track/4LfcOJlqdafD5u20KbzaDk" target="_blank"><i
+              class="fa fa-spotify w3-text-conb" style="font-size:36px"></i></a>
+        </h2>
+        <p class="fade-in-element w3-text-gray">Vocal : <a href="https://www.instagram.com/rei_tuyu" target="_blank"><i
+              class="fa fa-instagram w3-text-conb">Rei(礼衣)</i></a> <br>
+          Piano：<a href="https://twitter.com/mironuko" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Miro(ミロ)</i></a> <br>
+          illustration : <a href="https://twitter.com/omrice4869" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">おむたつ</i></a> <br>
+          Music&Lyrics/Editing/Guitar/Mix&Mastering : <a href="https://twitter.com/Pusu_kun" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Pusu(ぷす)</i></a> <br>
+          Animation : <a href="https://twitter.com/doromizu89" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Dorumizu(どろみず)</i></a>
+        </p>
+      </li>
+      <li><iframe width="1000" height="600" src="https://www.youtube.com/embed/4tT0j_-42Ac" frameborder="0"
+          allowfullscreen></iframe>
+        <h2 class="fade-in-element"><b>What If This Isn't A Slave? | 奴隷じゃないなら何ですか</b> <a
+            href="https://www.youtube.com/watch?v=4tT0j_-42Ac" target="_blank"><i
+              class="fa fa-youtube-play w3-text-conb" style="font-size:36px"></i></a>
+          <a href="https://open.spotify.com/track/5zCTCTwNzORjw4U5BzLseQ" target="_blank"><i
+              class="fa fa-spotify w3-text-conb" style="font-size:36px"></i></a>
+        </h2>
+        <p class="fade-in-element w3-text-gray">Vocal : <a href="https://www.instagram.com/rei_tuyu" target="_blank"><i
+              class="fa fa-instagram w3-text-conb">Rei(礼衣)</i></a> <br>
+          Piano：<a href="https://twitter.com/mironuko" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Miro(ミロ)</i></a> <br>
+          illustration : <a href="https://twitter.com/omrice4869" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">おむたつ</i></a> <br>
+          Music&Lyrics/Editing/Guitar/Mix&Mastering : <a href="https://twitter.com/Pusu_kun" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Pusu(ぷす)</i></a> <br>
+          Movie ：<a href="https://twitter.com/AzyuN_AN" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">AzyuN</i></a>
+        </p>
+      </li>
+      <li><iframe width="1000" height="600" src="https://www.youtube.com/embed/vcw5THyM7Jo" frameborder="0"
+          allowfullscreen></iframe>
+        <h2 class="fade-in-element"><b>If There Was An Endpoint. | 終点の先が在るとするならば。</b> <a
+            href="https://www.youtube.com/watch?v=vcw5THyM7Jo" target="_blank"><i
+              class="fa fa-youtube-play w3-text-conb" style="font-size:36px"></i></a>
+          <a href="https://open.spotify.com/track/3vYHC7uqrqfFzOCKX5TjWY" target="_blank"><i
+              class="fa fa-spotify w3-text-conb" style="font-size:36px"></i></a>
+        </h2>
+        <p class="fade-in-element w3-text-gray">Vocal : <a href="https://www.instagram.com/rei_tuyu" target="_blank"><i
+              class="fa fa-instagram w3-text-conb">Rei(礼衣)</i></a> <br>
+          Piano：<a href="https://twitter.com/mironuko" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Miro(ミロ)</i></a> <br>
+          illustration : <a href="https://twitter.com/omrice4869" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">おむたつ</i></a> <br>
+          Music&Lyrics/Editing/Guitar/Mix&Mastering : <a href="https://twitter.com/Pusu_kun" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Pusu(ぷす)</i></a> <br>
+          Movie ：<a href="https://twitter.com/AzyuN_AN" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">AzyuN</i></a>
+        </p>
+      </li>
+      <li><img src="images/someday.jpg" alt="Would be nice if you grow up one day. | いつかオトナになれるといいね。" width="100%">
+        <h2 class="fade-in-element"><b>Would be nice if you grow up one day. | いつかオトナになれるといいね。</b> <a
+            href="https://www.youtube.com/watch?v=cp8UEv8i0lc" target="_blank"><i
+              class="fa fa-youtube-play w3-text-conb" style="font-size:36px"></i></a>
+          <a href="https://open.spotify.com/track/4uJfoWaXsqUUSAA4dlG5FO" target="_blank"><i
+              class="fa fa-spotify w3-text-conb" style="font-size:36px"></i></a>
+        </h2>
+        <p class="fade-in-element w3-text-gray">Vocal : <a href="https://www.instagram.com/rei_tuyu" target="_blank"><i
+              class="fa fa-instagram w3-text-conb">Rei(礼衣)</i></a> <br>
+          illustration : <a href="https://twitter.com/hutaba_haru" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Futaba Haru (双葉陽)</i></a> <br>
+          Music&Lyrics/Editing/Guitar/Mix&Mastering : <a href="https://twitter.com/Pusu_kun" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Pusu(ぷす)</i></a> <br>
+          Animation：<a href="https://twitter.com/AzyuN_AN" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Sukoyaka Tsukasa（すこやかツカサ）</i></a> <br>
+          Movie：<a href="https://twitter.com/AzyuN_AN" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">AzyuN</i></a>
+        </p>
+      </li>
+      <li><img src="images/underkid.jpg" alt="Under Kids | アンダーキッズ" width="100%">
+        <h2 class="fade-in-element"><b>Under Kids | アンダーキッズ</b> <a href="https://www.youtube.com/watch?v=TBoBfT-_sfM"
+            target="_blank"><i class="fa fa-youtube-play w3-text-conb" style="font-size:36px"></i></a>
+          <a href="https://open.spotify.com/track/2b0U8mqe7asXH4lqTJah6T" target="_blank"><i
+              class="fa fa-spotify w3-text-conb" style="font-size:36px"></i></a>
+        </h2>
+        <p class="fade-in-element w3-text-gray">Vocal : <a href="https://www.instagram.com/rei_tuyu" target="_blank"><i
+              class="fa fa-instagram w3-text-conb">Rei(礼衣)</i></a> <br>
+          illustration : <a href="https://twitter.com/hutaba_haru" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Futaba Haru (双葉陽)</i></a> <br>
+          Music&Lyrics/Editing/Guitar/Mix&Mastering : <a href="https://twitter.com/Pusu_kun" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Pusu(ぷす)</i></a> <br>
+          Piano：<a href="https://twitter.com/mironuko" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Miro(ミロ)</i></a> <br>
+          Animation：<a href="https://twitter.com/AzyuN_AN" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Sukoyaka Tsukasa（すこやかツカサ）</i></a> <br>
+          Movie：<a href="https://twitter.com/AzyuN_AN" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">AzyuN</i></a>
+        </p>
+      </li>
+      <li><img src="images/outsky.jpg" alt="Overcast skies | 雨模様" width="100%">
+        <h2 class="fade-in-element"><b>Overcast skies | 雨模様</b> <a href="https://www.youtube.com/watch?v=9z7g8hsjmxA"
+            target="_blank"><i class="fa fa-youtube-play w3-text-conb" style="font-size:36px"></i></a>
+          <a href="https://open.spotify.com/track/7jGZoqyNksRHozqk7SICvy" target="_blank"><i
+              class="fa fa-spotify w3-text-conb" style="font-size:36px"></i></a>
+        </h2>
+        <p class="fade-in-element w3-text-gray">Vocal : <a href="https://www.instagram.com/rei_tuyu" target="_blank"><i
+              class="fa fa-instagram w3-text-conb">Rei(礼衣)</i></a> <br>
+          illustration : <a href="https://twitter.com/illmaticblue" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">KICO</i></a> <br>
+          Music&Lyrics/Editing/Guitar/Mix&Mastering : <a href="https://twitter.com/Pusu_kun" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Pusu(ぷす)</i></a> <br>
+          Piano：<a href="https://twitter.com/mironuko" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Miro(ミロ)</i></a> <br>
+          Movie：<a href="https://twitter.com/AzyuN_AN" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">AzyuN</i></a>
+        </p>
+      </li>
+      <li><img src="images/whatsort.jpg" alt="What Sort of Ending Are You Wishing For? | どんな結末がお望みだい？" width="100%">
+        <h2 class="fade-in-element"><b>What Sort of Ending Are You Wishing For? | どんな結末がお望みだい？</b> <a
+            href="https://www.youtube.com/watch?v=F9sWMsUNDw0" target="_blank"><i
+              class="fa fa-youtube-play w3-text-conb" style="font-size:36px"></i></a>
+          <a href="https://open.spotify.com/track/4zymIbLisTS6tWuwmFCds3" target="_blank"><i
+              class="fa fa-spotify w3-text-conb" style="font-size:36px"></i></a>
+        </h2>
+        <p class="fade-in-element w3-text-gray">Vocal : <a href="https://www.instagram.com/rei_tuyu" target="_blank"><i
+              class="fa fa-instagram w3-text-conb">Rei(礼衣)</i></a> <br>
+          illustration : <a href="https://twitter.com/hutaba_haru" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Futaba Haru (双葉陽)</i></a> <br>
+          Music&Lyrics/Editing/Guitar/Mix&Mastering : <a href="https://twitter.com/Pusu_kun" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Pusu(ぷす)</i></a> <br>
+          Piano：<a href="https://twitter.com/mironuko" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Miro(ミロ)</i></a> <br>
+          Movie：<a href="https://twitter.com/AzyuN_AN" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">AzyuN</i></a>
+        </p>
+      </li>
+      <li><img src="images/itmightbepain.jpg" alt="It Might Be Painful, but I Still Love It. | 傷つけど、愛してる。" width="100%">
+        <h2 class="fade-in-element"><b>It Might Be Painful, but I Still Love It. | 傷つけど、愛してる。</b><a
+            href="https://www.youtube.com/watch?v=K8GZ8SoNfmE" target="_blank"><i
+              class="fa fa-youtube-play w3-text-conb" style="font-size:36px"></i></a>
+          <a href="https://open.spotify.com/track/3v6m03G0wyCYUWXLrzRUPg" target="_blank"><i
+              class="fa fa-spotify w3-text-conb" style="font-size:36px"></i></a>
+        </h2>
+        <p class="fade-in-element w3-text-gray">Vocal : <a href="https://www.instagram.com/rei_tuyu" target="_blank"><i
+              class="fa fa-instagram w3-text-conb">Rei(礼衣)</i></a> <br>
+          Director：<a href="https://twitter.com/kumamiso_" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">熊味噌</i></a> <br>
+          Music&Lyrics/Editing/Guitar/Mix&Mastering : <a href="https://twitter.com/Pusu_kun" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Pusu(ぷす)</i></a> <br>
+          Piano：<a href="https://twitter.com/mironuko" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Miro(ミロ)</i></a> <br>
+          Movie：<a href="https://twitter.com/AzyuN_AN" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">AzyuN</i></a>
+        </p>
+      </li>
+      <li><img src="images/underhero.jpg" alt="Under Heroine | アンダーヒロイン" width="100%">
+        <h2 class="fade-in-element"><b>Under Heroine | アンダーヒロイン</b> <a
+            href="https://www.youtube.com/watch?v=mHnt8TVbC9M" target="_blank"><i
+              class="fa fa-youtube-play w3-text-conb" style="font-size:36px"></i></a>
+          <a href="https://open.spotify.com/track/4L8XdVoozRo5dxmgk0OPrs" target="_blank"><i
+              class="fa fa-spotify w3-text-conb" style="font-size:36px"></i></a>
+        </h2>
+        <p class="fade-in-element w3-text-gray">Vocal : <a href="https://www.instagram.com/rei_tuyu" target="_blank"><i
+              class="fa fa-instagram w3-text-conb">Rei(礼衣)</i></a> <br>
+          illustration : <a href="https://twitter.com/hutaba_haru" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Futaba Haru (双葉陽)</i></a> <br>
+          Music&Lyrics/Editing/Guitar/Mix&Mastering : <a href="https://twitter.com/Pusu_kun" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Pusu(ぷす)</i></a> <br>
+          Piano：<a href="https://twitter.com/mironuko" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">Miro(ミロ)</i></a> <br>
+          Movie：<a href="https://twitter.com/AzyuN_AN" target="_blank"><i
+              class="fa fa-twitter w3-text-conb">AzyuN</i></a>
+        </p>
+      </li>
+      <p>MR.Singto why you so Leam you look like a Diamond</p>
+    </ul>
+
+
+  </div>
+
+  <script>
+    // Script to open and close sidebar
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+      document.getElementById("myOverlay").style.display = "block";
+    }
+
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+      document.getElementById("myOverlay").style.display = "none";
+    }
+
+    // Modal Image Gallery
+    function onClick(element) {
+      document.getElementById("img01").src = element.src;
+      document.getElementById("modal01").style.display = "block";
+      var captionText = document.getElementById("caption");
+      captionText.innerHTML = element.alt;
+    }
+  </script>
+
+</body>
+
+</html>
